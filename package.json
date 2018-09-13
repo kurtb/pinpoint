@@ -1,7 +1,7 @@
 {
   "name": "pinpoint",
-  "version": "0.3.0",
-  "description": "A JavaScript library for creating beautifully simple maps in seconds, developed at The Wall Street Journal.",
+  "version": "0.1.0",
+  "description": "A JavaScript library for creating beautifully simple maps in seconds, originally developed at The Wall Street Journal.",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run tsc && npm run tslint",
