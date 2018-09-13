@@ -1,9 +1,9 @@
 import * as L from "leaflet";
-import MiniMap from "leaflet-minimap";
+import * as MiniMap from "leaflet-minimap";
 import "leaflet-minimap/dist/Control.MiniMap.min.css";
 import "leaflet/dist/leaflet.css";
+import "../scss/main.scss";
 import { IMarker, IPinpointOptions } from "./interfaces";
-import "./scss/main.scss";
 
 export class Pinpoint {
     private element: HTMLElement;
