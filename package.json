@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run tsc && npm run tslint",
+    "sass": "node-sass src/scss/main.scss > dist/pinpoint.css",
     "tsc": "tsc",
     "tslint": "tslint 'src/**/*.ts'",
     "webpack": "webpack --config webpack.config.js"
@@ -16,9 +17,14 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.1.0",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3",
     "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "dependencies": {

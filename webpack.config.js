@@ -3,7 +3,7 @@ var Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = {
     entry: {
-        main: './src/index.ts'
+        pinpoint: './src/index.ts'
     },
     devtool: 'source-map',
     module: {
@@ -36,5 +36,5 @@ module.exports = {
     },
     plugins: [new Visualizer({
         filename: './statistics.html'
-      })],
+    })],
 };
