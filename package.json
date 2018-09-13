@@ -1,5 +1,5 @@
 {
-  "name": "pinpoint",
+  "name": "@kurtb/pinpoint",
   "version": "0.1.0",
   "description": "A JavaScript library for creating beautifully simple maps in seconds, originally developed at The Wall Street Journal.",
   "main": "dist/index.js",
