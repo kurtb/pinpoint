@@ -15,7 +15,7 @@ export interface IPinpointOptions {
     dek?: string;
     dragend?: () => void;
     el?: string;
-    element?: string;
+    element?: HTMLElement;
     geojson?: boolean;
     hed?: string;
     lat?: number;

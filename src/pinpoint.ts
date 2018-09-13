@@ -12,8 +12,8 @@ export class Pinpoint {
     private resizeInterval: number;
 
     constructor(private opts: IPinpointOptions) {
-        this.opts.el = this.opts.element || this.opts.el || "#map-el";
-        this.element = document.querySelector(this.opts.el);
+        this.opts.el = this.opts.el || "#map-el";
+        this.element = this.opts.element || document.querySelector(this.opts.el);
         this.opts.basemap = opts.basemap || "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
         this.opts.basemapCredit =
             opts.basemapCredit ||
@@ -332,12 +332,14 @@ export class Pinpoint {
 
     public onResize(callback) {
         let currentWidth = this.element.offsetWidth;
-        this.resizeInterval = setInterval(function() {
-            if (currentWidth !== this.element.offsetWidth) {
-                currentWidth = currentWidth;
-                callback();
-            }
-        }.bind(this), 50);
+        this.resizeInterval = setInterval(
+            () => {
+                if (currentWidth !== this.element.offsetWidth) {
+                    currentWidth = this.element.offsetWidth;
+                    callback();
+                }
+            },
+            50);
     }
 
     private isOneOf(needle, haystack) {
