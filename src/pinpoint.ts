@@ -23,7 +23,7 @@ export class Pinpoint {
         this.addElements();
         this.fillText();
         this.setAspectRatio();
-        this.setupMap(opts);
+        this.setupMap();
         this.calcBounds();
 
         this.disableInteraction();
@@ -106,10 +106,12 @@ export class Pinpoint {
         }
     }
 
-    public setupMap(opts: IPinpointOptions) {
+    public setupMap(mapopts?: IPinpointOptions) {
+        const opts = this.opts;
+
         let maxZoom = opts.zoom + 1;
         let minZoom = opts.zoom - 1;
-        if (opts && opts.nozoomlimits) {
+        if (mapopts && mapopts.nozoomlimits) {
             maxZoom = 20;
             minZoom = 1;
         }
@@ -122,11 +124,10 @@ export class Pinpoint {
             scrollWheelZoom: true,
         };
 
-        const mapEl = this.element.querySelector(".map-inner") as HTMLElement;
+        const mapEl = this.element.querySelector<HTMLElement>(".map-inner");
         this.map = L.map(mapEl, mapOptions)
             .setView([opts.lat, opts.lon], opts.zoom);
         L.control.scale({ position: "topright" }).addTo(this.map); // scale bar
-
         // put miles on top of km
         const scaleParent = this.element.querySelector(".leaflet-control-scale.leaflet-control");
         const scaleLine = scaleParent.querySelector(".leaflet-control-scale-line");
@@ -137,7 +138,6 @@ export class Pinpoint {
         if (opts.dragend) {
             this.map.on("dragend", opts.dragend);
         }
-
         if (opts.zoomend) {
             this.map.on("zoomend", opts.zoomend);
         }
