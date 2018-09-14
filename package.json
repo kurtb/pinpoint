@@ -1,6 +1,6 @@
 {
   "name": "pinpoint",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A JavaScript library for creating beautifully simple maps in seconds, developed at The Wall Street Journal.",
   "main": "dist/index.js",
   "scripts": {
